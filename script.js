@@ -11,7 +11,13 @@ class Calculator {
       this.currentOperand = ''
       this.operation = undefined
     }
+
+    deleteLastDigit() {
+      this.currentOperand = this.currentOperand.toString().slice(0, -1)
+    }
+
     
+  
   
 
 //UI DECLARATIONS

@@ -10,3 +10,11 @@ body {
     margin: 0;
     background: linear-gradient(to right, #00AAFF, #00FF6C);
 }
+
+h1 {
+    font-family: 'Roboto' sans-serif;
+    font-size: 80px;
+    text-align: center;
+    padding: 10px;
+    color:darkblue;
+}

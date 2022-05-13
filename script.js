@@ -145,6 +145,11 @@ deleteButton.addEventListener('click', button => {
   calculator.updateScreen()
 })
 
+percentageButton.addEventListener('click', button => {
+  calculator.makePercentage()
+})
+
+
 
 
 

@@ -100,16 +100,6 @@ class Calculator {
       this.currentOperandTextElement.innerText = this.currentOperand
     }
   }  
-  
-  
-  
-  
-  
-  
-
-
-  
-  
 
 //UI DECLARATIONS
 
@@ -126,4 +116,16 @@ const equalsButton = document.querySelector('[data-equals]')
 
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
+
+//EVENT LISTENERS
+
+const calculator = new Calculator (previousOperandTextElement, currentOperandTextElement)
+
+numberButtons.forEach(button => 
+  {button.addEventListener('click', () => {
+  calculator.concatNumber(button.innerText)
+  calculator.updateScreen()
+  })
+})
+
 

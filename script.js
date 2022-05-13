@@ -73,6 +73,25 @@ class Calculator {
         this.previousOperandTextElement.innerText = ''
       }
     }
+
+    getDisplayNumber(number) {
+      const stringNumber = number.toString()
+      const integerDigits = parseFloat(stringNumber.split('.')[0])
+      const decimalDigits = stringNumber.split('.')[1]
+          
+      let integerDisplay
+      if (isNan(integerDigits)) {
+        integerDisplay = ''
+      } else {
+        integerDisplay = integerDigits.toLocaleString("en", { maximumFractionDigits : 0})
+      }
+      if (decimalDigits != null) {
+          return `${integerDisplay}.${decimalDigits}`
+        } else {
+          return integerDisplay
+      }
+    }  
+  
   
   
   

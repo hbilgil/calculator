@@ -149,6 +149,10 @@ percentageButton.addEventListener('click', button => {
   calculator.makePercentage()
 })
 
+equalsButton.addEventListener('click', button => {
+  calculator.operate()
+  calculator.updateScreen()
+})
 
 
 

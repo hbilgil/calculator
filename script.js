@@ -135,6 +135,12 @@ operationButtons.forEach(button =>
   })
 })
 
+allClearButton.addEventListener('click', button => {
+  calculator.clearAll()
+  calculator.updateScreen()
+})
+
+
 
 
 

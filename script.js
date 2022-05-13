@@ -4,11 +4,15 @@ class Calculator {
     constructor (previousOperandTextElement, currentOperandTextElement) {
       this.previousOperandTextElement = previousOperandTextElement
       this.currentOperandTextElement = currentOperandTextElement
-
     }
-}
 
-
+    clearAll() {
+      this.previousOperand = ''
+      this.currentOperand = ''
+      this.operation = undefined
+    }
+    
+  
 
 //UI DECLARATIONS
 

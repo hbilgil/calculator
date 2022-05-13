@@ -90,7 +90,16 @@ class Calculator {
         } else {
           return integerDisplay
       }
-    }  
+    } 
+
+    makePercentage() {
+      this.currentOperand = (this.currentOperand / 100)
+      this.operation = undefined
+      this.previousOperand =''
+      this.currentOperandTextElement.innerText = this.currentOperand
+    }
+  }  
+  
   
   
   

@@ -14,8 +14,8 @@ class Calculator {
     }
 
     deleteLastDigit() {
-      this.currentOperand = this.currentOperand.toString().slice(0, -1)
-    }
+        this.currentOperand = this.currentOperand.toString().slice(0, -1)
+  }
 
     concatNumber(number) {
       if (number === '.' && this.currentOperand.includes('.')) return
@@ -53,7 +53,7 @@ class Calculator {
           break
     
         case '÷' :
-          computation = previous / current
+          computation = (previous / current).toFixed(5)
           break
     
         default:

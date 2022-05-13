@@ -9,7 +9,7 @@ class Calculator {
 
     clearAll() {
       this.previousOperand = ''
-      this.currentOperand = ''
+      this.currentOperand = '0'
       this.operation = undefined
     }
 
@@ -18,7 +18,7 @@ class Calculator {
     }
 
     concatNumber(number) {
-      if (number === '.' && this.currentOperand.includes('.')) return;
+      if (number === '.' && this.currentOperand.includes('.')) return
       this.currentOperand = this.currentOperand.toString() + number.toString()
     }
 
@@ -81,7 +81,7 @@ class Calculator {
       const decimalDigits = stringNumber.split('.')[1]
           
       let integerDisplay
-      if (isNan(integerDigits)) {
+      if (isNaN(integerDigits)) {
         integerDisplay = ''
       } else {
         integerDisplay = integerDigits.toLocaleString("en", { maximumFractionDigits : 0})
@@ -99,7 +99,7 @@ class Calculator {
       this.previousOperand =''
       this.currentOperandTextElement.innerText = this.currentOperand
     }
-  }  
+}  
 
 //UI DECLARATIONS
 

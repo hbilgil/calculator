@@ -140,6 +140,12 @@ allClearButton.addEventListener('click', button => {
   calculator.updateScreen()
 })
 
+deleteButton.addEventListener('click', button => {
+  calculator.deleteLastDigit()
+  calculator.updateScreen()
+})
+
+
 
 
 

@@ -27,4 +27,38 @@ h1 {
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px auto) repeat(5, 100px);
 }
+
+.grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 0.5px solid black;
+    outline:none;
+    transition: all .07s ease;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+  
+.grid > button:hover {  
+    background-color: rgba(255, 255, 255, 0.9);
+}
+  
+.grid > button:active {  
+      background-color: rgba(211, 208, 208, 0.9);
+}
+  
+.larger {
+    grid-column: span 2;
+}
+  
+button.fixedColors {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+  
+button.black-backgrounds {
+    background-color: rgba(141, 139, 139, 0.9);
+}
+
+button.operators {
+    background-color: orange;
+}
+  
   

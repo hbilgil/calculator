@@ -202,7 +202,7 @@ document.addEventListener('keydown', (event) => {
     else if(event.key == ".") {
     document.getElementById('decimal').click()
   }
-    else if(event.key == "=") {
+    else if(event.key == "Enter") {
     document.getElementById('equals').click()
   }
     else if(event.key == "Escape") {
@@ -214,7 +214,7 @@ document.addEventListener('keydown', (event) => {
     else if(event.key == "%") { 
     document.getElementById('percent').click()
   }
-});
+})
 
 
 

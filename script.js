@@ -9,7 +9,7 @@ class Calculator {
 
     clearAll() {
       this.previousOperand = ''
-      this.currentOperand = '0'
+      this.currentOperand = ''
       this.operation = undefined
     }
 
@@ -51,18 +51,18 @@ class Calculator {
         case 'x' :
           computation = previous * current
           break
-    
+
         case '÷' :
-          computation = (previous / current).toFixed(5)
+          computation = parseFloat((previous / current).toFixed(5))
           break
-    
+        
         default:
           return
       }
-  
-      this.currentOperand = computation
-      this.operation = undefined
-      this.previousOperand = ''
+
+        this.currentOperand = computation
+        this.operation = undefined
+        this.previousOperand = ''
     }
 
     updateScreen() {
@@ -72,8 +72,9 @@ class Calculator {
         this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
       } else {
         this.previousOperandTextElement.innerText = ''
+        }
       }
-    }
+    
 
     getDisplayNumber(number) {
       const stringNumber = number.toString()
@@ -153,6 +154,68 @@ equalsButton.addEventListener('click', button => {
   calculator.operate()
   calculator.updateScreen()
 })
+
+// KEYBOARD SUPPORT
+
+document.addEventListener('keydown', (event) => {
+  if (event.key == "0") {
+    document.getElementById('zero').click()
+} else if (event.key == "1") {
+    document.getElementById('one').click()
+  }
+    else if (event.key == "2") {
+    document.getElementById('two').click()
+  }
+    else if (event.key == "3") {
+    document.getElementById('three').click()
+  }
+    else if (event.key == "4") {
+    document.getElementById('four').click()
+  }
+    else if (event.key == "5") {
+    document.getElementById('five').click()
+  }
+    else if (event.key == "6") {
+    document.getElementById('six').click()
+  }
+    else if(event.key == "7") {
+    document.getElementById('seven').click()
+  }
+    else if(event.key == "8") {
+    document.getElementById('eight').click()
+  }
+    else if(event.key == "9") {
+    document.getElementById('nine').click()
+  }
+    else if(event.key == "+") {
+    document.getElementById('plus').click()
+  }
+    else if(event.key == "-") {
+    document.getElementById('minus').click()
+  }
+    else if(event.key == "*") {
+    document.getElementById('multiply').click()
+  }
+    else if(event.key == "/") {
+    document.getElementById('division').click()
+  }
+    else if(event.key == ".") {
+    document.getElementById('decimal').click()
+  }
+    else if(event.key == "=") {
+    document.getElementById('equals').click()
+  }
+    else if(event.key == "Escape") {
+    document.getElementById('clearAll').click()
+  }
+    else if(event.key == "Backspace") {
+    document.getElementById('delete').click()
+  }
+    else if(event.key == "%") { 
+    document.getElementById('percent').click()
+  }
+});
+
 
 
 

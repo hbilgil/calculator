@@ -4,8 +4,10 @@ class Calculator {
     constructor (previousOperandTextElement, currentOperandTextElement) {
       this.previousOperandTextElement = previousOperandTextElement
       this.currentOperandTextElement = currentOperandTextElement
-      this.clearAll()
+      this.clearAll() //onload function triggered
     }
+
+//AC Button function
 
     clearAll() {
       this.previousOperand = ''
@@ -13,14 +15,21 @@ class Calculator {
       this.operation = undefined
     }
 
+//DEL Button function
+
     deleteLastDigit() {
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
   }
 
+
+//a function for making numbers with multiple digits
+
     concatNumber(number) {
-      if (number === '.' && this.currentOperand.includes('.')) return
+      if (number === '.' && this.currentOperand.includes('.')) return //prevents multiple "." character
       this.currentOperand = this.currentOperand.toString() + number.toString()
     }
+
+// a function for choosing operation type
 
     chooseOperation(operation) {
       if (this.currentOperand === '') return
@@ -32,12 +41,17 @@ class Calculator {
       this.currentOperand = ''
     }
 
+//a function to make computations
+
     operate() {
-      let computation
-      const current = parseFloat(this.currentOperand)
+
+      let computation //empty variable declaration
+
+      //turning Strings into numbers to make calculations by numbers
+      const current = parseFloat(this.currentOperand) 
       const previous = parseFloat(this.previousOperand)
     
-      if (isNaN(previous) || isNaN(current)) return
+      if (isNaN(previous) || isNaN(current)) return //preventing calculations between meaningless numbers
     
       switch (this.operation) {
         case '+' :
@@ -53,7 +67,7 @@ class Calculator {
           break
 
         case '÷' :
-          computation = parseFloat((previous / current).toFixed(5))
+          computation = parseFloat((previous / current).toFixed(5)) // keeping decimal length with 5 digit
           break
         
         default:
@@ -65,6 +79,8 @@ class Calculator {
         this.previousOperand = ''
     }
 
+//a function to update screen for output elements
+
     updateScreen() {
   
       this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
@@ -75,10 +91,11 @@ class Calculator {
         }
       }
     
+//a function to get integer or decimal number
 
     getDisplayNumber(number) {
-      const stringNumber = number.toString()
-      const integerDigits = parseFloat(stringNumber.split('.')[0])
+      const stringNumber = number.toString() //turning numbers into a string to be used in string method "split"
+      const integerDigits = parseFloat(stringNumber.split('.')[0]) //turning gathered string into a number to make calculations by numbers
       const decimalDigits = stringNumber.split('.')[1]
           
       let integerDisplay
@@ -94,13 +111,15 @@ class Calculator {
       }
     } 
 
+//% BUTTON function
+
     makePercentage() {
       this.currentOperand = (this.currentOperand / 100)
       this.operation = undefined
       this.previousOperand =''
       this.currentOperandTextElement.innerText = this.currentOperand
     }
-}  
+}
 
 //UI DECLARATIONS
 
@@ -157,8 +176,8 @@ equalsButton.addEventListener('click', button => {
 
 // KEYBOARD SUPPORT
 
-document.addEventListener('keydown', (event) => {
-  if (event.key == "0") {
+document.addEventListener('keydown', (event) => { //event will be made when the keyboard key is DOWN
+  if (event.key == "0") { // keyboard key with an event is defined
     document.getElementById('zero').click()
 } else if (event.key == "1") {
     document.getElementById('one').click()
